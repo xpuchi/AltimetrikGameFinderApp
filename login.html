@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="StyleSheet" href="./css/index.css" />
+    <title>GameFinder - Login</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <!-- Logo -->
+        <img src="./img/White.svg" />
+      </nav>
+    </header>
+
+    <div class="bg-box">
+      <div class="box-content">
+        <h3>Welcome! Log in or register</h3>
+        <p class="font-small">Log in to find the games you're looking for!</p>
+
+        <!--Login form-->
+        <form>
+          <div class="inputs-container">
+            <input type="email" id="email" placeholder="Email" />
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+          <div class="row font-small">
+            <div class="remember">
+              <input type="checkbox" id="remember" />
+              <label for="remember"> Remember me </label>
+            </div>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button class="button_primary" type="submit">Log in</button>
+        </form>
+
+        <p class="font-small margin-y">
+          Not registered yet? <a href="#">Register now</a>
+        </p>
+
+        <span class="row">
+          <hr style="width: 80px" />
+          <p>or</p>
+          <hr style="width: 80px" />
+        </span>
+        <!--Login with social media-->
+        <button class="button_social_media" type="button">
+          <div>
+            <img src="./img/icons/facebook.svg" class="social-media-icons" />
+          </div>
+          <span>Login with Facebook</span>
+        </button>
+        <button class="button_social_media" type="button">
+          <div>
+            <img src="./img/icons/twitter.svg" class="social-media-icons" />
+          </div>
+          <span>Login with Twitter</span>
+        </button>
+        <button class="button_social_media" type="button">
+          <div>
+            <img src="./img/icons/google.svg" class="social-media-icons" />
+          </div>
+          <span>Login with Google</span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

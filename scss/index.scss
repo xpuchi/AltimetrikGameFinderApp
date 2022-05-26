@@ -1,0 +1,129 @@
+@use "./variables";
+@use "./mixins";
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
+
+/* buttons */
+.button_primary {
+  @include mixins.buttons(
+    $bg: variables.$mint-condition,
+    $color: variables.$white,
+    $border: variables.$mint-condition
+  );
+}
+
+.button_secondary {
+  @include mixins.buttons(
+    $bg: transparent,
+    $color: variables.$mint-condition,
+    $border: variables.$kate-moss
+  );
+}
+
+.button_social_media {
+  @include mixins.buttons(
+    $bg: transparent,
+    $color: variables.$white,
+    $border: variables.$white
+  );
+  font-weight: bold;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+
+  div {
+    width: 30%;
+  }
+
+  span {
+    width: 70%;
+    text-align: left;
+  }
+}
+
+/* body */
+body {
+  font-family: variables.$font;
+  background: url("../img/BG.png") no-repeat;
+  height: 100vh;
+  background-size: cover;
+}
+
+.bg-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.box-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: variables.$white;
+  background: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  backdrop-filter: blur(10px);
+  margin: 5rem;
+  padding: 1rem 3rem 3rem 3rem;
+  border-radius: 0.5rem;
+
+  h3,
+  p {
+    margin: 3px;
+  }
+
+  h3 {
+    font-weight: bold;
+  }
+
+  .inputs-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .margin-y {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+form {
+  width: 100%;
+  margin-top: 10px;
+
+  input {
+    padding: 10px;
+    margin-top: 10px;
+    &::placeholder {
+      font-family: variables.$font;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.font-small {
+  font-size: 13px;
+}
+
+/* a links */
+a {
+  color: variables.$mint-condition;
+  text-decoration: none;
+}
+
+a:hover {
+  color: variables.$white;
+  text-decoration: underline;
+}
+
+.social-media-icons {
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px 0px 5px;
+  filter: invert(100%);
+  display: inline-block;
+}

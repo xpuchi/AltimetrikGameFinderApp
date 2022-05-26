@@ -1,0 +1,16 @@
+/* Buttons */
+@mixin buttons($bg, $color, $border) {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+  background: $bg;
+  color: $color;
+  border-color: $border;
+  border-radius: 0.2rem;
+}

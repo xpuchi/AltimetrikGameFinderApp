@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
+/* Font-family */
+/* Colors */
+/* primary-colors */
+/* secondary-colors */
+/* Buttons */
+/* buttons */
+.button_primary {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+  background: #5fe19b;
+  color: #fafafa;
+  border-color: #5fe19b;
+  border-radius: 0.2rem;
+}
+
+.button_secondary {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+  background: transparent;
+  color: #5fe19b;
+  border-color: #077a3c;
+  border-radius: 0.2rem;
+}
+
+.button_social_media {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+  background: transparent;
+  color: #fafafa;
+  border-color: #fafafa;
+  border-radius: 0.2rem;
+  font-weight: bold;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+}
+.button_social_media div {
+  width: 30%;
+}
+.button_social_media span {
+  width: 70%;
+  text-align: left;
+}
+
+/* body */
+body {
+  font-family: "Exo", sans-serif;
+  background: url("../img/BG.png") no-repeat;
+  height: 100vh;
+  background-size: cover;
+}
+
+.bg-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.box-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fafafa;
+  background: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  backdrop-filter: blur(10px);
+  margin: 5rem;
+  padding: 1rem 3rem 3rem 3rem;
+  border-radius: 0.5rem;
+}
+.box-content h3,
+.box-content p {
+  margin: 3px;
+}
+.box-content h3 {
+  font-weight: bold;
+}
+.box-content .inputs-container {
+  display: flex;
+  flex-direction: column;
+}
+.box-content .margin-y {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 100%;
+  margin-top: 10px;
+}
+form input {
+  padding: 10px;
+  margin-top: 10px;
+}
+form input::placeholder {
+  font-family: "Exo", sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.font-small {
+  font-size: 13px;
+}
+
+/* a links */
+a {
+  color: #5fe19b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fafafa;
+  text-decoration: underline;
+}
+
+.social-media-icons {
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px 0px 5px;
+  filter: invert(100%);
+  display: inline-block;
+}
