@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="StyleSheet" href="./css/login.css" />
+    <link rel="StyleSheet" href="./css/login-lightmode.css" />
     <title>GameFinder - Login</title>
   </head>
 
@@ -12,12 +12,11 @@
     <header>
       <nav>
         <!-- Logo -->
-        <img src="./img/White.svg" class="logo" />
+        <img src="./img/Black.svg" class="logo" />
       </nav>
     </header>
-
     <!-- dark/light mode switch -->
-    <div class="light-mode-switch">
+    <div class="dark-mode-switch">
       <input type="checkbox" id="switch" class="checkbox" />
       <label for="switch" class="toggle">
         <p>
@@ -30,12 +29,12 @@
     <div class="bg-box">
       <div class="box-content">
         <h3>Welcome! Log in or register</h3>
-        <p class="font-small">Log in to find the games you're looking for!</p>
+        <p>Log in to find the games you're looking for!</p>
 
         <!--Login form-->
         <form>
           <div class="inputs-container">
-            <input type="email" id="email" placeholder="Email" />
+            <input type="email" id="email" placeholder="Username or Email" />
             <input type="password" id="password" placeholder="Password" />
           </div>
           <div class="row font-small">
@@ -49,7 +48,8 @@
         </form>
 
         <p class="font-small margin-y">
-          Not registered yet? <a href="#">Register now</a>
+          Not registered yet?
+          <a href="#">Register now</a>
         </p>
 
         <span class="row">
@@ -58,21 +58,27 @@
           <hr />
         </span>
         <!--Login with social media-->
-        <button class="button_social_media" type="button">
+        <button class="button_social_media" type="submit">
           <div>
-            <img src="./img/icons/facebook.svg" class="social-media-icons" />
+            <img
+              src="./img/icons/facebookgreen.svg"
+              class="social-media-icons"
+            />
           </div>
           <span>Login with Facebook</span>
         </button>
-        <button class="button_social_media" type="button">
+        <button class="button_social_media" type="submit">
           <div>
-            <img src="./img/icons/twitter.svg" class="social-media-icons" />
+            <img
+              src="./img/icons/twittergreen.svg"
+              class="social-media-icons"
+            />
           </div>
           <span>Login with Twitter</span>
         </button>
-        <button class="button_social_media" type="button">
+        <button class="button_social_media" type="submit">
           <div>
-            <img src="./img/icons/google.svg" class="social-media-icons" />
+            <img src="./img/icons/googlegreen.svg" class="social-media-icons" />
           </div>
           <span>Login with Google</span>
         </button>

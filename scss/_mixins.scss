@@ -1,8 +1,9 @@
+@use "./variables";
+
 /* Buttons */
 @mixin buttons($bg, $color, $border) {
   border: none;
   margin: 0;
-  padding: 0;
   width: auto;
   overflow: visible;
   background: transparent;
@@ -12,5 +13,12 @@
   background: $bg;
   color: $color;
   border-color: $border;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
+  font-family: variables.$font;
+  font-size: 1rem;
+  font-weight: bolder;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
