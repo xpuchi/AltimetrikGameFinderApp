@@ -16,17 +16,6 @@
       </nav>
     </header>
 
-    <!-- dark/light mode switch -->
-    <div class="light-mode-switch">
-      <input type="checkbox" id="switch" class="checkbox" />
-      <label for="switch" class="toggle">
-        <p>
-          <span class="on-switch"> ON </span>
-          <span class="off-switch"> OFF </span>
-        </p>
-      </label>
-    </div>
-
     <div class="bg-box">
       <div class="box-content">
         <h3>Welcome! Log in or register</h3>
@@ -36,12 +25,21 @@
         <form>
           <div class="inputs-container">
             <input type="email" id="email" placeholder="Email" />
-            <input type="password" id="password" placeholder="Password" />
+            <div class="password-input">
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+              <img src="./img/icons/eye.svg" alt="eye-icon" />
+            </div>
           </div>
           <div class="row font-small">
             <div class="remember">
               <input type="checkbox" id="remember" class="remember" />
               <label for="remember"> Remember me </label>
+              <span class="checkmark"></span>
             </div>
             <a href="#">Forgot password?</a>
           </div>
