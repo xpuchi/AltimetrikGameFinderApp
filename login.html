@@ -25,22 +25,25 @@
         <form>
           <div class="inputs-container">
             <input type="email" id="email" placeholder="Email" />
-            <div class="password-input">
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                required
-              />
-              <img src="./img/icons/eye.svg" alt="eye-icon" />
-            </div>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <img
+              class="password-icon"
+              src="./img/icons/eye.svg"
+              alt="eye-icon"
+            />
           </div>
+
           <div class="row font-small">
-            <div class="remember">
-              <input type="checkbox" id="remember" class="remember" />
-              <label for="remember"> Remember me </label>
-              <span class="checkmark"></span>
+            <div class="checkbox-container">
+              <input type="checkbox" id="check" />
+              <label for="check">Remember me</label>
             </div>
+
             <a href="#">Forgot password?</a>
           </div>
           <button class="button_primary" type="submit">Log in</button>
