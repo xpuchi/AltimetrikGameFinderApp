@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="StyleSheet" href="./css/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <!-- Logo -->
+        <img src="./img/GAMEFINDER.svg" class="logo" alt="logo" />
+        <!-- search bar -->
+        <div class="search-container">
+          <img src="./img/icons/Search.svg" alt="search-icon" />
+          <input type="text" placeholder="Search games..." id="search" />
+        </div>
+        <!-- user avatar -->
+        <div class="logout">
+          <a href="#logout">Log out </a>
+          <div>
+            <img src="./img/Custom.svg" class="avatar" alt="user-avatar" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="title">
+        <h1>New and trending</h1>
+        <h3>Based on player counts and release date</h3>
+      </div>
+
+      <!-- dark/light mode switch -->
+      <div class="light-mode-switch">
+        <span
+          >Dark mode<input
+            type="checkbox"
+            id="switch"
+            class="checkbox"
+            checked
+          />
+          <label for="switch" class="toggle">
+            <p>
+              <span class="on-switch"> ON </span>
+              <span class="off-switch"> OFF </span>
+            </p>
+          </label></span
+        >
+      </div>
+    </div>
+
+    <!-- sidebar -->
+    <aside>
+      <nav class="sidenav">
+        <div class="nav-section1">
+          <a href="#" class="home">Home</a>
+          <a href="#">Reviews</a>
+          <a href="#">New Releases</a>
+        </div>
+        <div class="nav-section2">
+          <a href="#"><img src="./img/icons/star.svg" />This week</a>
+          <a href="#"><img src="./img/icons/calendar.svg" />This month</a>
+          <a href="#"><img src="./img/icons/clock.svg" />Coming soon</a>
+        </div>
+        <div class="nav-section3">
+          <a href="#" class="popular">Popular</a>
+          <a href="#"
+            ><img src="./img/icons/search-green.svg" />Last searches</a
+          >
+          <a href="#"><img src="./img/icons/thumb.svg" />Best of the year</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Page content -->
+    <div class="cards">
+      <div class="card">
+        <div class="card-background">
+          <div class="heart">
+            <img src="./img/icons/heart.svg" />
+          </div>
+        </div>
+        <div class="card-details">
+          <div class="game-title">
+            <h2>Grand Theft Auto V</h2>
+            <p class="number">#1</p>
+          </div>
+          <div class="game-info">
+            <div>
+              <p>Description</p>
+              <p>Description</p>
+            </div>
+            <div>
+              <p>Plataformas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-background">
+          <div class="heart">
+            <img src="./img/icons/heart.svg" />
+          </div>
+        </div>
+        <div class="card-details">
+          <div class="game-title">
+            <h2>Grand Theft Auto V</h2>
+            <p class="number">#1</p>
+          </div>
+          <div class="game-info">
+            <div>
+              <p>Description</p>
+              <p>Description</p>
+            </div>
+            <div>
+              <p>Plataformas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-background">
+          <div class="heart">
+            <img src="./img/icons/heart.svg" />
+          </div>
+        </div>
+        <div class="card-details">
+          <div class="game-title">
+            <h2>Grand Theft Auto V</h2>
+            <p class="number">#1</p>
+          </div>
+          <div class="game-info">
+            <div>
+              <p>Description</p>
+              <p>Description</p>
+            </div>
+            <div>
+              <p>Plataformas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
