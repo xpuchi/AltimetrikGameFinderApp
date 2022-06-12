@@ -1,14 +1,17 @@
 @use "./variables";
 @use "./mixins";
-@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;500;700;800;900&display=swap");
 
 /* buttons */
 .button_primary {
   @include mixins.buttons(
-    $bg: variables.$so-jaded,
+    $bg: variables.$mint-condition,
     $color: variables.$white,
     $border: variables.$mint-condition
   );
+  &:hover {
+    box-shadow: 1px 5px variables.$kate-moss;
+  }
 }
 
 .button_secondary {
@@ -25,10 +28,14 @@
     $color: variables.$white,
     $border: variables.$white
   );
-  font-weight: bold;
+  font-weight: bolder;
   border: 2px solid;
   display: flex;
   align-items: center;
+
+  &:hover {
+    opacity: 0.5;
+  }
 
   div {
     width: 30%;
@@ -38,171 +45,219 @@
     width: 70%;
     text-align: left;
   }
+
+  .social-media-icon {
+    width: 25px;
+    height: 25px;
+    filter: invert(100%);
+    display: inline-block;
+  }
 }
 
 /* body */
 body {
-  font-family: variables.$font;
-  background: url("../img/BG.png") no-repeat;
-  height: 100%;
-  background-size: cover;
+  width: 1440px;
   margin: 0;
-}
 
-nav {
-  height: 115px;
-}
-
-.logo {
-  width: 322px;
-  height: 66px;
-  margin-left: 2rem;
-  margin-top: 1.5rem;
-}
-
-.bg-box {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.box-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 370px;
-  height: 650px;
-  color: variables.$white;
-  background: rgba(0, 0, 0, 0.5);
-  background-blend-mode: overlay;
-  backdrop-filter: blur(10px);
-  margin-right: 7rem;
-  margin-top: 2rem;
-  padding: 2.5rem 3rem 0 3rem;
-  border-radius: 0.5rem;
-
-  h3,
-  p {
-    margin: 3px;
+  /* a links */
+  a {
+    color: variables.$mint-condition;
+    text-decoration: none;
   }
 
-  h3 {
-    font-weight: bolder;
+  a:hover {
+    color: variables.$white;
+    text-decoration: underline;
+  }
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+
+  .logo {
+    width: 322px;
+    height: 66px;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.login-card {
+  position: absolute;
+  top: 29%;
+  left: 86%;
+  transform: translate(-75%, -20%);
+  background: transparent;
+  width: 450px;
+
+  .content {
+    font-family: variables.$font;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: variables.$white;
+    background: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    backdrop-filter: blur(10px);
+    padding: 2.5rem 2.8rem;
+    border-radius: 0.5rem;
+
+    .login-title {
+      font-size: 20px;
+    }
+    .sub-title {
+      font-size: 16px;
+    }
+
+    .margin-y {
+      margin: 30px 0 30px 0;
+    }
+
+    /* Login form */
+    form {
+      width: 100%;
+      margin-top: 10px;
+
+      input {
+        padding: 10px;
+        margin-top: 10px;
+        border: 0;
+        border-radius: 0.2rem;
+        &::placeholder {
+          font-family: variables.$font;
+        }
+      }
+    }
+
+    h3,
+    p {
+      margin: 3px;
+    }
   }
 
-  .inputs-container {
-    margin: 1rem 0 1rem 0;
+  .form-inputs {
+    margin: 1rem 0 1.2rem 0;
     display: flex;
     flex-direction: column;
 
     input {
-      padding: 1rem;
+      padding: 0.7rem;
+    }
+
+    .password-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      left: 82%;
+      top: 28.5%;
     }
   }
 
-  .margin-y {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-}
-
-.password-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  position: absolute;
-  top: 12.5rem;
-  right: 3.5rem;
-}
-
-form {
-  width: 100%;
-  margin-top: 10px;
-
-  input {
-    padding: 10px;
-    margin-top: 10px;
-    border: 0;
-    border-radius: 0.2rem;
-    &::placeholder {
-      font-family: variables.$font;
-    }
-  }
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-
-  hr {
+  .card-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+
+    hr {
+      width: 100%;
+    }
+
+    /* Checkbox remember me */
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+
+      label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      input[type="checkbox"] {
+        cursor: pointer;
+        opacity: 0; // nota: this allows it to be accessible for screen readers
+        width: 0;
+
+        &:checked + label::before {
+          background-color: variables.$so-jaded;
+          border: none;
+          content: url("../img/icons/checkwhite.svg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: variables.$white;
+          width: 1.2rem;
+          height: 1.2rem;
+          border-radius: 0.3em;
+          margin-right: 0.5rem;
+        }
+      }
+
+      label::before {
+        content: "";
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 0.3em;
+        margin-right: 0.5rem;
+        border: 0.09em solid variables.$white;
+      }
+    }
   }
 }
 
 .or {
   padding: 0 1rem;
 }
-
 .font-small {
   font-size: 13px;
 }
 
-/* checkbox remember me */
-.checkbox-container {
-  display: flex;
-  align-items: center;
-
-  label {
-    cursor: pointer;
-    display: flex;
+/* Carousel */
+.carousel {
+  &.slide {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
   }
 
-  input[type="checkbox"] {
-    cursor: pointer;
-    opacity: 0; // nota: this allows it to be accessible for screen readers
-    position: absolute;
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 7%;
+  }
 
-    &:checked + label::before {
-      background-color: variables.$so-jaded;
-      border: none;
-      content: "\2714";
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: variables.$white;
-      width: 1.2rem;
-      height: 1.2rem;
-      border-radius: 0.3em;
-      margin-right: 0.5rem;
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    background-color: variables.$ashtray;
+    border: 7px solid variables.$ashtray;
+    border-radius: 50%;
+  }
+
+  .carousel-indicators {
+    background-color: variables.$ashtray;
+    border-radius: 1em;
+    width: 110px;
+    margin: 0 0 2rem 0;
+    padding: 0 5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    [data-bs-target] {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
     }
   }
+}
 
-  label::before {
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    border-radius: 0.3em;
-    margin-right: 0.5rem;
-    border: 0.09em solid variables.$white;
+.carousel-inner {
+  .carousel-item {
+    img {
+      width: 100%;
+      height: 1024px;
+    }
   }
-}
-
-/* a links */
-a {
-  color: variables.$mint-condition;
-  text-decoration: none;
-}
-
-a:hover {
-  color: variables.$white;
-  text-decoration: underline;
-}
-
-.social-media-icons {
-  width: 20px;
-  height: 20px;
-  margin: 0px 5px 0px 5px;
-  filter: invert(100%);
-  display: inline-block;
 }

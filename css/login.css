@@ -1,5 +1,4 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;500;700;800;900&display=swap");
 /* Font-family */
 /* Colors */
 /* primary-colors */
@@ -16,7 +15,7 @@
   padding: 10px;
   width: 100%;
   margin-top: 20px;
-  background: #36b873;
+  background: #5fe19b;
   color: #fafafa;
   border-color: #5fe19b;
   border-radius: 0.5rem;
@@ -26,6 +25,9 @@
 }
 .button_primary:hover {
   cursor: pointer;
+}
+.button_primary:hover {
+  box-shadow: 1px 5px #077a3c;
 }
 
 .button_secondary {
@@ -65,13 +67,16 @@
   font-family: "Exo", sans-serif;
   font-size: 1rem;
   font-weight: bolder;
-  font-weight: bold;
+  font-weight: bolder;
   border: 2px solid;
   display: flex;
   align-items: center;
 }
 .button_social_media:hover {
   cursor: pointer;
+}
+.button_social_media:hover {
+  opacity: 0.5;
 }
 .button_social_media div {
   width: 30%;
@@ -80,98 +85,147 @@
   width: 70%;
   text-align: left;
 }
+.button_social_media .social-media-icon {
+  width: 25px;
+  height: 25px;
+  filter: invert(100%);
+  display: inline-block;
+}
 
 /* body */
 body {
-  font-family: "Exo", sans-serif;
-  background: url("../img/BG.png") no-repeat;
-  height: 100%;
-  background-size: cover;
+  width: 1440px;
   margin: 0;
+  /* a links */
+}
+body a {
+  color: #5fe19b;
+  text-decoration: none;
+}
+body a:hover {
+  color: #fafafa;
+  text-decoration: underline;
 }
 
-nav {
-  height: 115px;
+header {
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
 }
-
-.logo {
+header .logo {
   width: 322px;
   height: 66px;
   margin-left: 2rem;
   margin-top: 1.5rem;
 }
 
-.bg-box {
-  display: flex;
-  justify-content: flex-end;
+.login-card {
+  position: absolute;
+  top: 29%;
+  left: 86%;
+  transform: translate(-75%, -20%);
+  background: transparent;
+  width: 450px;
 }
-
-.box-content {
+.login-card .content {
+  font-family: "Exo", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 370px;
-  height: 650px;
   color: #fafafa;
   background: rgba(0, 0, 0, 0.5);
   background-blend-mode: overlay;
   backdrop-filter: blur(10px);
-  margin-right: 7rem;
-  margin-top: 2rem;
-  padding: 2.5rem 3rem 0 3rem;
+  padding: 2.5rem 2.8rem;
   border-radius: 0.5rem;
+  /* Login form */
 }
-.box-content h3,
-.box-content p {
-  margin: 3px;
+.login-card .content .login-title {
+  font-size: 20px;
 }
-.box-content h3 {
-  font-weight: bolder;
+.login-card .content .sub-title {
+  font-size: 16px;
 }
-.box-content .inputs-container {
-  margin: 1rem 0 1rem 0;
-  display: flex;
-  flex-direction: column;
+.login-card .content .margin-y {
+  margin: 30px 0 30px 0;
 }
-.box-content .inputs-container input {
-  padding: 1rem;
-}
-.box-content .margin-y {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.password-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  position: absolute;
-  top: 12.5rem;
-  right: 3.5rem;
-}
-
-form {
+.login-card .content form {
   width: 100%;
   margin-top: 10px;
 }
-form input {
+.login-card .content form input {
   padding: 10px;
   margin-top: 10px;
   border: 0;
   border-radius: 0.2rem;
 }
-form input::placeholder {
+.login-card .content form input::placeholder {
   font-family: "Exo", sans-serif;
 }
-
-.row {
+.login-card .content h3,
+.login-card .content p {
+  margin: 3px;
+}
+.login-card .form-inputs {
+  margin: 1rem 0 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.login-card .form-inputs input {
+  padding: 0.7rem;
+}
+.login-card .form-inputs .password-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  left: 82%;
+  top: 28.5%;
+}
+.login-card .card-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  width: 100%;
+  /* Checkbox remember me */
+}
+.login-card .card-row hr {
   width: 100%;
 }
-.row hr {
-  width: 100%;
+.login-card .card-row .checkbox-container {
+  display: flex;
+  align-items: center;
+}
+.login-card .card-row .checkbox-container label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.login-card .card-row .checkbox-container input[type=checkbox] {
+  cursor: pointer;
+  opacity: 0;
+  width: 0;
+}
+.login-card .card-row .checkbox-container input[type=checkbox]:checked + label::before {
+  background-color: #36b873;
+  border: none;
+  content: url("../img/icons/checkwhite.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fafafa;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.3em;
+  margin-right: 0.5rem;
+}
+.login-card .card-row .checkbox-container label::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.3em;
+  margin-right: 0.5rem;
+  border: 0.09em solid #fafafa;
 }
 
 .or {
@@ -182,57 +236,38 @@ form input::placeholder {
   font-size: 13px;
 }
 
-/* checkbox remember me */
-.checkbox-container {
-  display: flex;
-  align-items: center;
-}
-.checkbox-container label {
-  cursor: pointer;
-  display: flex;
-}
-.checkbox-container input[type=checkbox] {
-  cursor: pointer;
-  opacity: 0;
+/* Carousel */
+.carousel.slide {
+  width: 100%;
   position: absolute;
+  z-index: -1;
 }
-.checkbox-container input[type=checkbox]:checked + label::before {
-  background-color: #36b873;
-  border: none;
-  content: "✔";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fafafa;
-  width: 1.2rem;
-  height: 1.2rem;
-  border-radius: 0.3em;
-  margin-right: 0.5rem;
+.carousel .carousel-control-next,
+.carousel .carousel-control-prev {
+  width: 7%;
 }
-.checkbox-container label::before {
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  border-radius: 0.3em;
-  margin-right: 0.5rem;
-  border: 0.09em solid #fafafa;
+.carousel .carousel-control-next-icon,
+.carousel .carousel-control-prev-icon {
+  background-color: #515050;
+  border: 7px solid #515050;
+  border-radius: 50%;
 }
-
-/* a links */
-a {
-  color: #5fe19b;
-  text-decoration: none;
+.carousel .carousel-indicators {
+  background-color: #515050;
+  border-radius: 1em;
+  width: 110px;
+  margin: 0 0 2rem 0;
+  padding: 0 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.carousel .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
 
-a:hover {
-  color: #fafafa;
-  text-decoration: underline;
-}
-
-.social-media-icons {
-  width: 20px;
-  height: 20px;
-  margin: 0px 5px 0px 5px;
-  filter: invert(100%);
-  display: inline-block;
+.carousel-inner .carousel-item img {
+  width: 100%;
+  height: 1024px;
 }
