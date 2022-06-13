@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;500;700;800;900&display=swap");
 /* Font-family */
 /* Colors */
 /* primary-colors */
@@ -50,7 +50,6 @@ header {
 }
 .search-container input::placeholder {
   font-family: "Exo", sans-serif;
-  font-weight: bolder;
 }
 
 .logout {
@@ -62,6 +61,9 @@ header {
   width: 40%;
   margin: 5px;
   color: #fafafa;
+}
+.logout a:hover {
+  text-decoration: underline;
 }
 .logout img {
   width: 60%;
@@ -112,7 +114,6 @@ header {
   font-size: 0.5rem;
   margin: 5px 5px;
   text-align: center;
-  font-weight: bolder;
 }
 .toggle p .on-switch {
   color: #fafafa;
@@ -142,9 +143,6 @@ header {
   padding-top: 20px;
 }
 
-.nav-section1 a {
-  font-weight: bolder;
-}
 .nav-section1 .home {
   color: #5fe19b;
 }
@@ -156,10 +154,6 @@ header {
 .nav-section2 img,
 .nav-section3 img {
   padding-right: 0.5rem;
-}
-.nav-section2 .popular,
-.nav-section3 .popular {
-  font-weight: bolder;
 }
 
 /* navigation menu links */
@@ -221,5 +215,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
+}
+.card .card-details .game-info p {
+  margin: 0;
 }

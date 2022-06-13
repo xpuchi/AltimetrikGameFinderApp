@@ -1,8 +1,9 @@
 @use "./variables";
 @use "./mixins";
-@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;500;700;800;900&display=swap");
 
 body {
+  // width: 1440px;
   margin: 0;
   font-family: variables.$font;
   color: variables.$white;
@@ -45,7 +46,6 @@ header {
     padding-left: 2.5rem;
     &::placeholder {
       font-family: variables.$font;
-      font-weight: bolder;
     }
   }
 }
@@ -58,6 +58,10 @@ header {
     width: 40%;
     margin: 5px;
     color: variables.$white;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   img {
@@ -113,7 +117,6 @@ header {
     font-size: 0.5rem;
     margin: 5px 5px;
     text-align: center;
-    font-weight: bolder;
 
     .on-switch {
       color: variables.$white;
@@ -147,9 +150,6 @@ header {
 }
 
 .nav-section1 {
-  a {
-    font-weight: bolder;
-  }
   .home {
     color: variables.$mint-condition;
   }
@@ -160,9 +160,6 @@ header {
   padding-top: 2rem;
   img {
     padding-right: 0.5rem;
-  }
-  .popular {
-    font-weight: bolder;
   }
 }
 
@@ -232,7 +229,11 @@ header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding: 0 1rem;
+      padding: 0 1rem 1rem 1rem;
+
+      p {
+        margin: 0;
+      }
     }
   }
 }

@@ -179,7 +179,8 @@ header .logo {
   height: 1.5rem;
   position: absolute;
   left: 82%;
-  top: 28.5%;
+  top: 28.8%;
+  cursor: pointer;
 }
 .login-card .card-row {
   display: flex;

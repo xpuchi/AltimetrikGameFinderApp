@@ -1,0 +1,19 @@
+{
+    "users": [
+        {
+            "email": "lucas.g@gmail.com",
+            "password": "$2a$12$9BqJ5nK0ufWG/hE76PdmsOT6lAiZRFkcNi1H2pqhryTWcfmx7VXS6",
+            "unhashedPassword": "lg123"
+        },
+        {
+            "email": "myemail@hotmail.com",
+            "password": "$2a$12$FBWlPZ6DDkhn5IQlXXHqRO.0Y3i6E57SvZZuWcXZ3Y64o6J6fotbq", 
+            "unhashedPassword": "123456"
+        },
+        {
+            "email": "maria@maria.com",
+            "password": "$2a$12$tcPocIluVwVSCjgalKsQf.MpB9EYzUiWy4ylMQvRrykDEEYExGKD2", 
+            "unhashedPassword": "maria1000"
+        }
+    ]
+}

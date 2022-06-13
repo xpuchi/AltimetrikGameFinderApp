@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="StyleSheet" href="./css/login.css" />
+    <link rel="StyleSheet" href="../css/login.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,7 +17,7 @@
   <body>
     <header>
       <!-- Logo -->
-      <img src="./img/White.svg" class="logo" />
+      <img src="../img/White.svg" class="logo" />
     </header>
     <!-- Content -->
     <div class="login-card">
@@ -25,7 +25,7 @@
         <h1 class="login-title">Welcome! Log in or register</h1>
         <p class="sub-title">Log in to find the games you're looking for!</p>
 
-        <form>
+        <form method="post">
           <div class="form-inputs">
             <input type="email" id="email" placeholder="Email" />
             <input
@@ -36,8 +36,10 @@
             />
             <img
               class="password-icon"
-              src="./img/icons/eye.svg"
+              id="passwordIcon"
+              src="../img/icons/eye2.svg"
               alt="show/hide password"
+              onclick="toggleIcon()"
             />
           </div>
 
@@ -49,7 +51,7 @@
 
             <a href="#">Forgot password?</a>
           </div>
-          <button class="button_primary">Log in</button>
+          <button class="button_primary" onclick="login()">Log in</button>
         </form>
 
         <p class="font-small margin-y">
@@ -67,7 +69,7 @@
           <div>
             <img
               class="social-media-icon"
-              src="./img/icons/facebook.svg"
+              src="../img/icons/facebook.svg"
               alt="facebook"
             />
           </div>
@@ -77,7 +79,7 @@
           <div>
             <img
               class="social-media-icon"
-              src="./img/icons/twitter.svg"
+              src="../img/icons/twitter.svg"
               alt="twitter"
             />
           </div>
@@ -87,7 +89,7 @@
           <div>
             <img
               class="social-media-icon"
-              src="./img/icons/google.svg"
+              src="../img/icons/google.svg"
               alt="google"
             />
           </div>
@@ -140,7 +142,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="./img/BG.png"
+            src="../img/BG.png"
             class="d-block w-100"
             alt="background-image"
           />
@@ -206,5 +208,6 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/index.js"></script>
   </body>
 </html>
