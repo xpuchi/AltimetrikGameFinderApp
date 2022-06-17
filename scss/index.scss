@@ -178,11 +178,10 @@ header {
 
 /* page content */
 .cards {
-  margin-left: 18rem;
-  margin-right: 2.5rem;
-  margin-top: 3.5rem;
-  display: flex;
-  justify-content: space-between;
+  margin: 3.5rem 2.5rem 2rem 18rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {
@@ -190,11 +189,7 @@ header {
   border-radius: 0.5rem;
 
   .card-background {
-    background: url("https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg")
-      no-repeat center;
     border-radius: 0.5rem 0.5rem 0 0;
-    background-size: cover;
-    width: 383px;
     height: 200px;
 
     .heart {
@@ -230,6 +225,16 @@ header {
       flex-direction: row;
       justify-content: space-between;
       padding: 0 1rem 1rem 1rem;
+
+      .info-title {
+        color: variables.$fossil;
+      }
+
+      .platforms {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7px;
+      }
 
       p {
         margin: 0;
