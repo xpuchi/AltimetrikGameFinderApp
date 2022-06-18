@@ -1,3 +1,4 @@
+// showGames function is executed when the page loads, showing the games
 window.onload = () => showGames(1);
 
 let currentPage = 1;
@@ -37,19 +38,23 @@ async function getGames(page) {
 
 /**
  * @description Funcion que muestra los juegos en el DOM
- *
  */
 async function showGames(page) {
   const cards = document.querySelector(".cards");
   const data = await getGames(page);
   const games = data.results;
 
+  // Loop the games array
   games.forEach((game) => {
+    // creates a div with card and multi classes
     const card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("card", "multi");
+
+    // Loops through the genre category of each game, and returns an array with each name
     const genreNames = game.genres.map((genre) => genre.name);
     const genresString = genreNames.join(", ");
 
+    // Loops through the games parent_platforms and returns eachs platform name with its icon
     const platforms = game.parent_platforms.map((parent_platform) => {
       const platformName = parent_platform.platform.name;
       if (platformName === "PlayStation") {
@@ -62,12 +67,13 @@ async function showGames(page) {
         return '<img src="../img/icons/switch.svg" />';
       }
     });
+
     const platformsString = platforms.join("\n");
 
     card.innerHTML = `
       <div class="card-background" style="background: url(${game.background_image}) no-repeat center; background-size: cover;" >
         <div class="heart">
-        <img src="./img/icons/heart.svg" />
+          <img src="./img/icons/heart.svg" id="heart" onclick="this.src='./img/icons/heart-liked.gif'" />
         </div>
       </div>
       <div class="card-details">
@@ -76,17 +82,24 @@ async function showGames(page) {
           <p class="number">#${gameNumber}</p>
         </div>
         <div class="game-info">
-          <div class="info-title">
-            <p>Release date:</p>
-            <p>Genres:</p>
-          </div>
-          <div>
-            <p>${game.released}</p>
-            <p>${genresString}</p>
+          <div class="info-container">
+            <div class="info">
+              <p class="info-title">Release date:</p>
+              <p>${game.released}</p>
+            </div>
+            <div class="info">
+              <p class="info-title">Genres:</p>
+              <p>${genresString}</p>
+            </div>
           </div>
           <div class="platforms">
             ${platformsString}
           </div>
+        </div>
+        <div class="game-description">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio non quod temporibus labore, atque iure maiores molestiae et eveniet distinctio magni. Esse similique, in reiciendis odio corrupti maiores ab explicabo?
+          </p>
         </div>
       </div>
     `;

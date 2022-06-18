@@ -54,9 +54,11 @@ header {
   display: flex;
   align-items: center;
   margin-top: 1.3rem;
+  margin-right: 2rem;
   a {
-    width: 40%;
+    // width: 40%;
     margin: 5px;
+    margin-right: 1rem;
     color: variables.$white;
 
     &:hover {
@@ -65,11 +67,12 @@ header {
   }
 
   img {
-    width: 60%;
-    margin-right: 2.5rem;
+    width: 90%;
+    cursor: pointer;
   }
 }
 
+/* title and subtitle */
 .content {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -139,10 +142,23 @@ header {
   }
 }
 
+/* cards display buttons */
+.display-buttons {
+  display: flex;
+  justify-content: flex-end;
+  .singleCard,
+  .multipleCard {
+    margin: 10px 0 10px 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+}
+
 /* navigation menu */
 .sidenav {
   width: 15rem;
-  position: fixed;
+  position: absolute;
   top: 15rem;
   left: 2.5rem;
   overflow-x: hidden;
@@ -181,7 +197,15 @@ header {
   margin: 3.5rem 2.5rem 2rem 18rem;
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
+
+  &.multi {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.single {
+    grid-template-columns: repeat(1, 1fr);
+    width: 750px;
+  }
 }
 
 .card {
@@ -190,17 +214,16 @@ header {
 
   .card-background {
     border-radius: 0.5rem 0.5rem 0 0;
-    height: 200px;
+  }
 
-    .heart {
-      display: flex;
-      justify-content: flex-end;
+  .heart {
+    display: flex;
+    justify-content: flex-end;
 
-      img {
-        width: 20px;
-        height: 20px;
-        padding: 0.75rem;
-      }
+    img {
+      width: 20px;
+      height: 20px;
+      padding: 0.75rem;
     }
   }
 
@@ -214,30 +237,118 @@ header {
       justify-content: space-between;
       align-items: center;
       padding: 0 1rem;
-
-      .number {
-        color: variables.$mint-condition;
-      }
     }
 
-    .game-info {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 0 1rem 1rem 1rem;
+    .number {
+      color: variables.$mint-condition;
+    }
+  }
 
-      .info-title {
-        color: variables.$fossil;
+  /* multi card view */
+  &.multi {
+    .card-background {
+      height: 200px;
+    }
+
+    .card-details {
+      .game-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1rem 1rem 1rem;
+
+        .info-container {
+          flex-direction: column;
+
+          .info {
+            display: flex;
+            flex-direction: row;
+
+            p {
+              margin: 0;
+              &:last-child {
+                margin-left: 1rem;
+              }
+            }
+
+            .info-title {
+              color: variables.$fossil;
+            }
+          }
+        }
+
+        .platforms {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 7px;
+          height: 50px;
+        }
       }
 
-      .platforms {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 7px;
+      .game-description {
+        display: none;
+      }
+    }
+  }
+
+  /* single card view */
+  &.single {
+    margin-left: 14rem;
+    .card-background {
+      width: 750px;
+      height: 500px;
+    }
+
+    .card-details {
+      .game-info {
+        display: flex;
+        flex-direction: row;
+        padding: 0 1rem 1rem 1rem;
+        justify-content: space-between;
+
+        .info-container {
+          display: flex;
+          flex-direction: row;
+          width: 80%;
+
+          .info {
+            display: flex;
+            justify-content: space-between;
+
+            &:first-child {
+              width: 35%;
+            }
+
+            &:last-child {
+              margin-left: 3rem;
+            }
+
+            p {
+              margin: 0;
+
+              &:last-child {
+                margin-left: 0.5rem;
+              }
+            }
+
+            .info-title {
+              color: variables.$fossil;
+            }
+          }
+        }
+
+        .platforms {
+          display: flex;
+          justify-content: flex-end;
+          gap: 7px;
+
+          width: 20px;
+          height: 20px;
+        }
       }
 
-      p {
-        margin: 0;
+      .game-description {
+        padding: 0 1rem 1rem 1rem;
       }
     }
   }

@@ -56,20 +56,22 @@ header {
   display: flex;
   align-items: center;
   margin-top: 1.3rem;
+  margin-right: 2rem;
 }
 .logout a {
-  width: 40%;
   margin: 5px;
+  margin-right: 1rem;
   color: #fafafa;
 }
 .logout a:hover {
   text-decoration: underline;
 }
 .logout img {
-  width: 60%;
-  margin-right: 2.5rem;
+  width: 90%;
+  cursor: pointer;
 }
 
+/* title and subtitle */
 .content {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -133,10 +135,23 @@ header {
   background-color: #5e81fa;
 }
 
+/* cards display buttons */
+.display-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.display-buttons .singleCard,
+.display-buttons .multipleCard {
+  margin: 10px 0 10px 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
 /* navigation menu */
 .sidenav {
   width: 15rem;
-  position: fixed;
+  position: absolute;
   top: 15rem;
   left: 2.5rem;
   overflow-x: hidden;
@@ -173,22 +188,29 @@ header {
   margin: 3.5rem 2.5rem 2rem 18rem;
   display: grid;
   gap: 2rem;
+}
+.cards.multi {
   grid-template-columns: repeat(3, 1fr);
+}
+.cards.single {
+  grid-template-columns: repeat(1, 1fr);
+  width: 750px;
 }
 
 .card {
   background-color: #313031;
   border-radius: 0.5rem;
+  /* multi card view */
+  /* single card view */
 }
 .card .card-background {
   border-radius: 0.5rem 0.5rem 0 0;
-  height: 200px;
 }
-.card .card-background .heart {
+.card .heart {
   display: flex;
   justify-content: flex-end;
 }
-.card .card-background .heart img {
+.card .heart img {
   width: 20px;
   height: 20px;
   padding: 0.75rem;
@@ -204,23 +226,87 @@ header {
   align-items: center;
   padding: 0 1rem;
 }
-.card .card-details .game-title .number {
+.card .card-details .number {
   color: #5fe19b;
 }
-.card .card-details .game-info {
+.card.multi .card-background {
+  height: 200px;
+}
+.card.multi .card-details .game-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 1rem 1rem 1rem;
 }
-.card .card-details .game-info .info-title {
+.card.multi .card-details .game-info .info-container {
+  flex-direction: column;
+}
+.card.multi .card-details .game-info .info-container .info {
+  display: flex;
+  flex-direction: row;
+}
+.card.multi .card-details .game-info .info-container .info p {
+  margin: 0;
+}
+.card.multi .card-details .game-info .info-container .info p:last-child {
+  margin-left: 1rem;
+}
+.card.multi .card-details .game-info .info-container .info .info-title {
   color: #929293;
 }
-.card .card-details .game-info .platforms {
+.card.multi .card-details .game-info .platforms {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 7px;
+  height: 50px;
 }
-.card .card-details .game-info p {
+.card.multi .card-details .game-description {
+  display: none;
+}
+.card.single {
+  margin-left: 14rem;
+}
+.card.single .card-background {
+  width: 750px;
+  height: 500px;
+}
+.card.single .card-details .game-info {
+  display: flex;
+  flex-direction: row;
+  padding: 0 1rem 1rem 1rem;
+  justify-content: space-between;
+}
+.card.single .card-details .game-info .info-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+.card.single .card-details .game-info .info-container .info {
+  display: flex;
+  justify-content: space-between;
+}
+.card.single .card-details .game-info .info-container .info:first-child {
+  width: 35%;
+}
+.card.single .card-details .game-info .info-container .info:last-child {
+  margin-left: 3rem;
+}
+.card.single .card-details .game-info .info-container .info p {
   margin: 0;
+}
+.card.single .card-details .game-info .info-container .info p:last-child {
+  margin-left: 0.5rem;
+}
+.card.single .card-details .game-info .info-container .info .info-title {
+  color: #929293;
+}
+.card.single .card-details .game-info .platforms {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+  width: 20px;
+  height: 20px;
+}
+.card.single .card-details .game-description {
+  padding: 0 1rem 1rem 1rem;
 }
