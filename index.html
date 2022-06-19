@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="StyleSheet" href="./css/index.css" type="text/css" />
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./img/icons/favicongreen.svg" />
+    <title>Game Finder</title>
   </head>
   <body>
     <header>
@@ -37,14 +38,10 @@
       <div class="buttons">
         <div class="light-mode-switch">
           <span
-            >Dark mode<input
-              type="checkbox"
-              id="mode"
-              class="checkbox"
-              checked
-            />
+            >Dark mode
+            <input type="checkbox" id="switch" class="checkbox" checked />
             <label for="switch" class="toggle">
-              <p>
+              <p class="switch-text">
                 <span class="on-switch"> ON </span>
                 <span class="off-switch"> OFF </span>
               </p>
@@ -142,7 +139,7 @@
     <!-- Page content -->
     <div class="cards multi"></div>
 
-    <script src="./js/index.js"></script>
     <script src="./js/buttons.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

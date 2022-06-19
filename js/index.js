@@ -40,6 +40,7 @@ async function getGames(page) {
  * @description Funcion que muestra los juegos en el DOM
  */
 async function showGames(page) {
+  const currentLayout = layout === "multicard" ? "multi" : "single";
   const cards = document.querySelector(".cards");
   const data = await getGames(page);
   const games = data.results;
@@ -48,7 +49,7 @@ async function showGames(page) {
   games.forEach((game) => {
     // creates a div with card and multi classes
     const card = document.createElement("div");
-    card.classList.add("card", "multi");
+    card.classList.add("card", currentLayout);
 
     // Loops through the genre category of each game, and returns an array with each name
     const genreNames = game.genres.map((genre) => genre.name);
@@ -73,7 +74,7 @@ async function showGames(page) {
     card.innerHTML = `
       <div class="card-background" style="background: url(${game.background_image}) no-repeat center; background-size: cover;" >
         <div class="heart">
-          <img src="./img/icons/heart.svg" id="heart" onclick="this.src='./img/icons/heart-liked.gif'" />
+          <img src="./img/icons/heart.svg" id="heart" />
         </div>
       </div>
       <div class="card-details">

@@ -110,17 +110,17 @@ header {
   left: 1px;
   transition: all 0.5s;
 }
-.toggle p {
+.toggle .switch-text {
   display: flex;
   justify-content: space-between;
   font-size: 0.5rem;
   margin: 5px 5px;
   text-align: center;
 }
-.toggle p .on-switch {
+.toggle .switch-text .on-switch {
   color: #fafafa;
 }
-.toggle p .off-switch {
+.toggle .switch-text .off-switch {
   color: #929293;
 }
 
