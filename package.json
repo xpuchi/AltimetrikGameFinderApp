@@ -1,0 +1,25 @@
+{
+  "name": "altimetrikgamefinderapp",
+  "version": "1.0.0",
+  "description": "Game finder",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "npx json-server-auth ./db/users.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpuchi/AltimetrikGameFinderApp.git"
+  },
+  "keywords": [],
+  "author": "Barbara Georgopulos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xpuchi/AltimetrikGameFinderApp/issues"
+  },
+  "homepage": "https://github.com/xpuchi/AltimetrikGameFinderApp#readme",
+  "devDependencies": {
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0"
+  }
+}
